@@ -1,5 +1,5 @@
-#自动化打包
-###命令行打包ipa
+# 自动化打包
+### 命令行打包ipa
 xcodebuild archive打包的方法（xcode提供的）
 
 1. clean工程
@@ -21,7 +21,7 @@ xcodebuild -exportArchive -archivePath /Users/sunflower/Desktop/transfer/ XXXX.x
 ```
 注意，这个需要配置一个exportOptionsPlist文件，详情查看命令行xcodebuild - h
 
-###上传到appstore
+### 上传到appstore
 使用altool工具，其实就是application loader的方式上传：
 
 ```
@@ -45,12 +45,12 @@ altool --upload-app -f /Users/sunflower/Desktop/ transfer/XXXX/XXXX.ipa -u xxxxx
 ln -s /Applications/Xcode.app/Contents/ Applications/Application\ Loader.app/Contents/itms /usr/local/itms
 ```
 
-###另外
+### 另外
 如果需要添加软链，可以再更目录下建一个bin文件，把相关配置放到里面，可以先看.bash_profile里面是否有profile文件，如果有就可以在根目录下的.profile里面export一个环境变量指向bin
 
 还有安装rvm工具的[地址](http://www.jianshu.com/p/bea091f8448d  _t_t_t=0.4159752886240491)
 
-####远程登录进行打包需要注意的事
+#### 远程登录进行打包需要注意的事
 ssh登录，如果打包提示证书或者一些不正常的提示报错，可以尝试先对远程的keychain进行解锁，再进行下列操作：
 
 ```
